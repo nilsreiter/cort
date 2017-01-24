@@ -374,7 +374,7 @@ class CoNLLDocument(Document):
                     the CoNLL format.
             """
         identifier = " ".join(document_as_string.split("\n")[0].split(" ")[2:])
-
+        self.antecedent_decisions = {}
         self.document_table = CoNLLDocument.__string_to_table(
             document_as_string)
         in_sentence_ids = [int(i) for i in self.__extract_from_column(2)]
